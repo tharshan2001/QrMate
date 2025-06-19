@@ -32,11 +32,8 @@ export const getUserQrCodes = async (req, res) => {
   }
 };
 
-
-// New method for admin to get all QR codes
 export const getAllQrCodes = async (req, res) => {
   try {
-
     if (req.user.role !== 'admin') {
       return res.status(403).json({ message: 'Access denied, admin only.' });
     }
@@ -49,25 +46,20 @@ export const getAllQrCodes = async (req, res) => {
   }
 };
 
-
 export const deleteQrCode = async (req, res) => {
   try {
     const { id } = req.params;
 
-    // Find the QR code by id
     const qr = await QrCode.findById(id);
     if (!qr) {
       return res.status(404).json({ message: 'QR Code not found.' });
     }
 
-    // Check ownership or admin role
     if (req.user._id.toString() !== qr.userId.toString() && req.user.role !== 'admin') {
       return res.status(403).json({ message: 'Not authorized to delete this QR Code.' });
     }
 
-    // Correct deletion method
     await qr.deleteOne();
-
     res.status(200).json({ message: 'QR Code deleted successfully.' });
   } catch (err) {
     console.error('Delete QR error:', err);
