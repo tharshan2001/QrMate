@@ -1,4 +1,4 @@
-import qrCode from '../models/qrCode.js'; 
+import qrCode from '../models/QrCodeModel.js'; 
 
 export const createQrCode = async (req, res) => {
   try {
