@@ -34,7 +34,7 @@ const QrCodeHistory = () => {
     setLoading(true);
     const toastId = toast.loading('Loading QR code history...');
     try {
-      const { data } = await axios.get('http://localhost:5001/api/qrcodes', {
+      const { data } = await axios.get('https://qrmate-production-e426.up.railway.app/api/qrcodes', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -129,7 +129,7 @@ const QrCodeHistory = () => {
 
     const toastId = toast.loading('Deleting QR code...');
     try {
-      await axios.delete(`http://localhost:5001/api/qrcodes/${id}`, {
+      await axios.delete(`https://qrmate-production-e426.up.railway.app/api/qrcodes/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -142,7 +142,7 @@ const QrGenerator = () => {
 
     try {
       await axios.post(
-        'http://localhost:5001/api/qrcodes',
+        'https://qrmate-production-e426.up.railway.app/api/qrcodes',
         {
           title,
           content: text,
