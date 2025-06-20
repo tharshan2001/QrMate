@@ -11,11 +11,14 @@ const app = express();
 
 // Middleware: Updated CORS configuration
 app.use(cors({
-  origin: 'http://localhost:5173', // your frontend origin
-   origin: 'http://localhost:3000',
-   origin: 'https://qrmate-production-e426.up.railway.app/api/',
-  credentials: true,               // allow cookies and credentials
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://qr-frontend-production.up.railway.app' // your Railway frontend
+  ],
+  credentials: true,
 }));
+
 
 app.use(express.json());
 
