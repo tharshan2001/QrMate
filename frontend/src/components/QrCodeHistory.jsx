@@ -34,7 +34,7 @@ const QrCodeHistory = () => {
     setLoading(true);
     const toastId = toast.loading('Loading QR code history...');
     try {
-      const { data } = await axios.get('https://qrmate-production-e426.up.railway.app/api/qrcodes', {
+      const { data } = await axios.get('https://qr-frontend-production.up.railway.app/api/qrcodes', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

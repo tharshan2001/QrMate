@@ -176,7 +176,7 @@ const QrScanner = () => {
   const saveToServer = async (text, base64Image, toastId) => {
     try {
       await axios.post(
-        'https://qrmate-production-e426.up.railway.app/api/qrcodes',
+        'https://qr-frontend-production.up.railway.app/api/qrcodes',
         {
           userId,
           title: isUrl(text) ? 'Scanned URL' : 'Scanned QR Code',
