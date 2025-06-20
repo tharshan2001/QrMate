@@ -13,7 +13,7 @@ const LoginForm = () => {
     setLoading(true);
 
     try {
-      const apiUrl = 'http://localhost:5001/api/auth/login';
+      const apiUrl = 'https://qrmate-production-e426.up.railway.app/auth/login';
 
       const response = await axios.post(
         apiUrl,

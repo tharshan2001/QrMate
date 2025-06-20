@@ -22,7 +22,7 @@ const SignupForm = () => {
     }
 
     try {
-      const apiUrl = 'http://localhost:5001/api/auth/register';
+      const apiUrl = 'https://qrmate-production-e426.up.railway.app/api/auth/register';
       
       const response = await axios.post(
         apiUrl,
