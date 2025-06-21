@@ -12,8 +12,7 @@ const app = express();
 // Middleware: Updated CORS configuration
 app.use(cors({
   origin: [
-    'http://localhost:5173',
-    'http://localhost:3000',
+    
     'https://qr-frontend-production.up.railway.app' // your Railway frontend
   ],
   credentials: true,
